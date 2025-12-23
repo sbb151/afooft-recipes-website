@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFOOFT Recipe Collection</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f8f8f8; padding: 20px; }
+    header { text-align: center; margin-bottom: 20px; }
+    h1 { margin: 0 0 10px; }
+    .search-bar { display: flex; justify-content: center; margin-bottom: 20px; }
+    .search-bar input { width: 100%; max-width: 600px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }
+    ul.results { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
+    ul.results li { background: #fff; margin-bottom: 10px; padding: 15px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    ul.results li a { text-decoration: none; color: #007acc; font-weight: bold; }
+    ul.results li a:hover { text-decoration: underline; }
+    .snippet { color: #555; margin-top: 5px; }
+  </style>
+  <script src="recipes.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AFOOFT Recipe Collection</h1>
+    <p>Search through our family’s favorite recipes</p>
+  </header>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Type keywords or phrases...">
+  </div>
+  <ul id="results" class="results"></ul>
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('results');
+    // Cache for loaded recipe contents
+    const recipeContents = {};
+
+    // Load recipe content via fetch when needed
+    async function loadContent(url) {
+      if (recipeContents[url]) return recipeContents[url];
+      const response = await fetch(url);
+      const htmlText = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlText, 'text/html');
+      const contentEl = doc.querySelector('#content');
+      const text = contentEl ? contentEl.textContent : doc.body.textContent;
+      recipeContents[url] = text;
+      return text;
+    }
+
+    async function displayResults(query) {
+      resultsList.innerHTML = '';
+      const trimmed = query.trim().toLowerCase();
+      // If query empty, list all recipes by title
+      if (!trimmed) {
+        recipes.forEach(rec => {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = rec.url;
+          link.textContent = rec.title;
+          li.appendChild(link);
+          resultsList.appendChild(li);
+        });
+        return;
+      }
+      // Otherwise search in title and content
+      for (const rec of recipes) {
+        const titleLower = rec.title.toLowerCase();
+        let match = false;
+        let snippet = '';
+        if (titleLower.includes(trimmed)) {
+          match = true;
+        }
+        const content = await loadContent(rec.url);
+        const contentLower = content.toLowerCase();
+        const idx = contentLower.indexOf(trimmed);
+        if (idx !== -1) {
+          match = true;
+          // build snippet around the match
+          const start = Math.max(0, idx - 40);
+          const end = Math.min(content.length, idx + trimmed.length + 40);
+          // Clean up whitespace in the snippet by collapsing consecutive whitespace (including newlines).
+          snippet = content.substring(start, end).replace(/\s+/g, ' ');
+        }
+        if (match) {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = rec.url;
+          link.textContent = rec.title;
+          li.appendChild(link);
+          if (snippet) {
+            const snipEl = document.createElement('div');
+            snipEl.className = 'snippet';
+            snipEl.textContent = '… ' + snippet + ' …';
+            li.appendChild(snipEl);
+          }
+          resultsList.appendChild(li);
+        }
+      }
+    }
+
+    // Initial display of all recipes
+    displayResults('');
+
+    searchInput.addEventListener('input', () => {
+      displayResults(searchInput.value);
+    });
+  </script>
+</body>
+</html>
