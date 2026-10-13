@@ -153,11 +153,14 @@ def main():
                 tp.parent.mkdir(parents=True, exist_ok=True)
                 tp.write_text(text)
                 entry['text'] = f'text/{stem}.txt'
-            if photo_of(f, ext, SOURCE / 'images' / f'{stem}.jpg'):
-                entry['image'] = f'images/{stem}.jpg'
         except Exception as e:  # keep going; the manifest records what failed
             entry['error'] = str(e)[:300]
             log(f'  could not read {rel}: {e}')
+        try:
+            if photo_of(f, ext, SOURCE / 'images' / f'{stem}.jpg'):
+                entry['image'] = f'images/{stem}.jpg'
+        except Exception as e:
+            log(f'  no photo from {rel}: {e}')
         by_path[rel] = entry
         log(f'  read {rel}')
 
