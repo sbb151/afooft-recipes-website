@@ -231,7 +231,8 @@ CATEGORY_OVERRIDES = {
     'Smashed Cheeseburger Sliders for a Group': ['Beef'], 'Parasite’s Ram-Don': ['Beef', 'Pasta & Grains'],
     'Italian Picnic Heroes': ['Sandwiches'], 'Monte Cubano Gourmet': ['Sandwiches'], 'Paninnis': ['Sandwiches'],
     'Perfect Steam-Boiled Eggs': ['Breakfast'], 'Poached Egg in a Microwave': ['Breakfast'], 'Savory Dutch Baby': ['Breakfast'],
-    'Pommes Darphin': ['Vegetables & Sides'], 'Ratatouille By Melissa Clark': ['Vegetables & Sides'],
+    'Pommes Darphin': ['Vegetables & Sides'], 'Caillettes': ['Pork & Lamb'], 'Cottage Cheese Egg Bites': ['Breakfast'],
+    'Raspberry Sablés with Lemon Curd': ['Desserts'], 'Ratatouille By Melissa Clark': ['Vegetables & Sides'],
     'Tian – Made Ahead With Beautiful Presentation': ['Vegetables & Sides'], 'Vegducken': ['Vegetables & Sides'],
     'Sabudana Khichdi (Maharashtrian Tapioca Pilaf)': ['Pasta & Grains'], 'Asian Takeout': ['Chicken & Poultry', 'Pork & Lamb'],
     'PSU vs Nevada 2025': ['Menus & Holidays'],
@@ -334,6 +335,22 @@ EXCLUDE = {
     'Christmas Alphabet Dictionary', 'Nurses', 'Fresh Market Ketchup Note', 'Oregon 2025', 'Kent State 2024',
     "Cook's Illustrated Annual 2021", "Cook's Illustrated Annual 2022", 'NYTThe best trattoria in Rome', 'NYT - 12 Restaurant Triumphs of 2012',
 }
+# Reviewed 2026-10-13: entries that aren't recipes (file name without extension -> why)
+NOT_RECIPES = {
+    '10 Unexpected Ways to Use Your Microwave': 'microwave tips article', 'AFOOFT Dedication': 'the book’s dedication',
+    'Braised Red Cabbage With Caraway and Apple': 'empty file, title only', 'Butter Boards': 'trend article, no recipe',
+    'Christmas 2021': 'menu of dish names', 'Christmas 2022 (no border)': 'menu of dish names', 'Christmas 2023': 'menu of dish names',
+    'Christmas 2024': 'menu of dish names', 'Christmas 2025': 'menu of dish names', 'Christmas Dinner 2018': 'menu of dish names',
+    'Thanksgiving 2021': 'menu of dish names', 'Thanksgiving 2022': 'menu of dish names', 'Thanksgiving 2023': 'menu of dish names',
+    'Thanksgiving 2024': 'menu of dish names', 'Thanksgiving 2025': 'menu of dish names',
+    'Come': 'mealtime grace', 'Graces': 'mealtime graces', 'Dear Cook': 'letter to Cook’s Illustrated',
+    'FancyExtraVirginOliveOils': 'olive oil tasting', 'TastingOliveOilMA01': 'olive oil tasting', 'Tasting-BalsamicVinegar': 'balsamic vinegar tasting',
+    'Meat Cooking Temperatures': 'temperature chart', 'Steak Cuts (Flat Steaks)': 'article on steak cuts',
+    'The Best Pizza in America': 'restaurant profile, no recipe', 'PSU vs Nevada 2025': 'tailgate theme ideas',
+    'Race Day Soiree - General Potter Farm': 'event directions', 'Sous Vide Basics': 'two web links',
+    'Tomahawk Ribeye Steak vs Lamb Lollipops': 'size notes', 'zz': 'layout scratch file',
+}
+
 COMMON = set('the and a of to with in for or until about cup cups tablespoon tablespoons teaspoon teaspoons salt '
              'pepper add heat minutes oil butter large it is on into over at then pan oven cook serve'.split())
 
@@ -375,6 +392,9 @@ def main():
             continue
         if name in EXCLUDE:
             skipped.append({'file': p, 'reason': 'not a recipe'})
+            continue
+        if unicodedata.normalize('NFC', name) in NOT_RECIPES:
+            skipped.append({'file': p, 'reason': 'not a recipe: ' + NOT_RECIPES[unicodedata.normalize('NFC', name)]})
             continue
         tp = resolve(m.get('text'))
         if not tp:
