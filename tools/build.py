@@ -22,7 +22,7 @@ UNIT = re.compile(r'\b(cups?|tablespoons?|tbsp?s?|teaspoons?|tsps?|ounces?|oz|po
 H_ING = re.compile(r'^\s*(?:ingredients?|what you(?:\'|’)ll need|you will need)\b(.*)$', re.I)
 H_DIR = re.compile(r'^\s*(?:preparation|directions?|method|instructions?|steps|procedure|how to make it|to make)\s*:?\s*$', re.I)
 H_NOTE = re.compile(r'^\s*(?:tips?|notes?|cook(?:\'|’)s notes?|variations?|to serve|serving suggestions?|make ahead|storage)\s*:?\s*$', re.I)
-H_YIELD = re.compile(r'^\s*(?:yield|yields|serves|servings|makes)\s*:?\s*(.+)$', re.I)
+H_YIELD = re.compile(r'^\s*(?:(?:yield|yields|serves|servings|makes)\s*:?\s*(.+)|((?:[\w ]+ for )?\d+\s*(?:[-–]|to)?\s*\d*\s*servings?\.?))$', re.I)
 H_TIME = re.compile(r'^\s*(total time|prep(?:aration)? time|cook(?:ing)? time|time|active time)\s*:?\s*(.+)$', re.I)
 
 
@@ -44,6 +44,16 @@ def looks_like_ingredient(line):
     if len(l) < 60 and re.search(r'\b(salt|pepper|to taste|for garnish|for serving|olive oil|as needed)\b', l, re.I) and not l.endswith('.'):
         return True
     return bool(QTY_START.match(l)) or (len(l) < 70 and bool(UNIT.search(l)) and not l.endswith('.'))
+
+
+def continues(ings, raw, line):
+    # PDFs and old slides wrap one ingredient over several lines ("4 pounds plum tomatoes," / "halved lengthwise")
+    if not ings or not isinstance(ings[-1], str) or BULLET.match(raw) or QTY_START.match(line):
+        return False
+    prev = ings[-1].rstrip()
+    if line[:1].islower() or line[:1] in '(':
+        return True
+    return prev.endswith((',', ' or', ' and', ' at', ' of', ' with', ' the', ' a', ' to', ' in', '-', '(')) and len(line) < 80
 
 
 def is_subhead(line):
@@ -105,7 +115,7 @@ def parse(text, fallback_title):
             continue
         m = H_YIELD.match(line)
         if m and len(line) < 60:
-            r['servings'] = r['servings'] or m.group(1).strip()
+            r['servings'] = r['servings'] or (m.group(1) or m.group(2)).strip()
             continue
         m = H_TIME.match(line)
         if m and len(line) < 60 and section in ('intro', 'ing'):
@@ -128,8 +138,18 @@ def parse(text, fallback_title):
                 continue
         if section == 'ing':
             sm = NUMSTEP.match(line)
-            if (sm and len(line) > 60) or (not BULLET.match(raw) and (len(line) > 160 or (len(line) > 70 and line.endswith('.') and not looks_like_ingredient(line)))):
+            fb = BULLET.sub('', following)
+            if len(line) < 50 and len(fb) > 110 and not QTY_START.match(fb) and not BULLET.match(raw):
+                # "Prep" / "Alternate Preparation" style heading right before the method
                 section = 'dir'
+                if not H_DIR.match(line):
+                    r['directions'].append({'h': line.rstrip(':')})
+                continue
+            if (len(line) > 110 and not QTY_START.match(BULLET.sub('', line))) or (sm and len(line) > 60) or (not BULLET.match(raw) and (len(line) > 160 or (len(line) > 70 and line.endswith('.') and not looks_like_ingredient(line)))):
+                section = 'dir'
+            elif continues(r['ingredients'], raw, line):
+                r['ingredients'][-1] += ' ' + line
+                continue
             elif is_subhead(raw) and NUMSTEP.match(following):
                 section = 'dir'
                 r['directions'].append({'h': line.rstrip(':')})
@@ -162,7 +182,9 @@ def parse(text, fallback_title):
     r['notes'] = '\n'.join(notes).strip()
     # A "recipe" with a huge intro and nothing else is really unstructured text
     structured = bool(r['ingredients']) and bool(r['directions'])
-    score = (2 if r['ingredients'] else 0) + (2 if r['directions'] else 0) + (1 if r['description'] else 0) + (1 if r['servings'] else 0) + min(len(text), 20000) / 20000
+    # very long "ingredients" mean columns of a PDF page got interleaved
+    garbled = sum(1 for x in r['ingredients'] if isinstance(x, str) and len(x) > 110)
+    score = -2 * min(garbled, 2) + (2 if r['ingredients'] else 0) + (2 if r['directions'] else 0) + (1 if r['description'] else 0) + (1 if r['servings'] else 0) + min(len(text), 20000) / 20000
     if not structured:
         r['text'] = clean(text).strip()
     return r, score
@@ -192,7 +214,36 @@ CATS = [
 MAIN = {'Chicken & Poultry', 'Beef', 'Pork & Lamb', 'Seafood'}
 
 
+# Titles the keyword rules can't place
+CATEGORY_OVERRIDES = {
+    '1905': ['Salads'], '101 Appetizers': ['Appetizers'], 'Panzanella': ['Salads'], 'Tabbouleh With Apples': ['Salads'], 'Watermelon Salads': ['Salads'],
+    '101Appetizers': ['Appetizers'], 'Dips for Super Bowl or Tailgate': ['Appetizers'], 'Gougères': ['Appetizers'],
+    'Gruyère Puff': ['Appetizers'], 'Marinated Manchego': ['Appetizers'], 'Marinated Olives': ['Appetizers'],
+    'Marinated Olives and Salami': ['Appetizers'], 'Olives With Hot Cheese': ['Appetizers'], 'Pâté': ['Appetizers'],
+    'Taralli': ['Appetizers'], 'Taramosalata': ['Appetizers'], 'Ricotta That’s Fresh and Homemade': ['Appetizers'],
+    'Daiquiri No2': ['Drinks'], 'Pumpkin Spice Old Fashioned': ['Drinks'], 'Spiked Blackberry-Marjoram Limeade': ['Drinks'],
+    'Mango Soft Serve': ['Desserts'], 'Sherbet – The Secret Recipe From Hawaii': ['Desserts'], 'Brandied Dried Fruit': ['Desserts'],
+    'Marsala Honey Pears with Gorgonzola from Nigella Express': ['Desserts'], 'Sformata di Ricotta': ['Desserts'],
+    'Cranberry': ['Sauces & Condiments'],
+    'Kabobs': ['Beef', 'Grilling'], 'Leberkäse': ['Pork & Lamb'], 'Meatball – Of Ikea Fame': ['Beef'],
+    'Mexican Birria de Res': ['Beef', 'Soups & Stews'], 'Milanesa Napolitana From Argentina': ['Beef'],
+    'Mississippi Roast': ['Beef', 'Pressure Cooker & Slow Cooker'], 'Momofuku Bo Ssam': ['Pork & Lamb'],
+    'Smashed Cheeseburger Sliders for a Group': ['Beef'], 'Parasite’s Ram-Don': ['Beef', 'Pasta & Grains'],
+    'Italian Picnic Heroes': ['Sandwiches'], 'Monte Cubano Gourmet': ['Sandwiches'], 'Paninnis': ['Sandwiches'],
+    'Perfect Steam-Boiled Eggs': ['Breakfast'], 'Poached Egg in a Microwave': ['Breakfast'], 'Savory Dutch Baby': ['Breakfast'],
+    'Pommes Darphin': ['Vegetables & Sides'], 'Ratatouille By Melissa Clark': ['Vegetables & Sides'],
+    'Tian – Made Ahead With Beautiful Presentation': ['Vegetables & Sides'], 'Vegducken': ['Vegetables & Sides'],
+    'Sabudana Khichdi (Maharashtrian Tapioca Pilaf)': ['Pasta & Grains'], 'Asian Takeout': ['Chicken & Poultry', 'Pork & Lamb'],
+    'PSU vs Nevada 2025': ['Menus & Holidays'],
+    'Cook’s Illustrated’s Recipe of the Year 1993–2015': ['Notes & Guides'], 'Deep Flavor, No Browning': ['Notes & Guides'],
+    'Fancy Extra Virgin Olive Oils': ['Notes & Guides'], 'Meat Cooking Temperatures': ['Notes & Guides'],
+    'Joel Robuchon': ['Notes & Guides'], '10 Unexpected Ways to Use Your Microwave': ['Notes & Guides'],
+}
+
+
 def categorize(title, folder):
+    if title.split('  ')[0] in CATEGORY_OVERRIDES:
+        return CATEGORY_OVERRIDES[title.split('  ')[0]]
     t = title.lower()
     cats = [name for name, pat in CATS if re.search(pat, t, re.I)]
     if folder:
@@ -265,6 +316,9 @@ def strip_junk(text):
 
 
 def file_title(name):
+    name = unicodedata.normalize('NFC', name)
+    name = re.sub(r'^(NYTimes|NYT|BDG|CI)(?=[A-Z0-9])', '', name)
+    name = re.sub(r'(?<=\d)(?=[A-Z])', ' ', name).replace('NCheese', "'N Cheese")
     # Sam's file names are the clean titles ("Potatoes – Salt Baked ..."); split CamelCase ones
     t = re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', name) if ' ' not in name else name
     t = re.sub(r"\s*\((?:[^)]*conflicted copy[^)]*|\d+)\)", '', t)
@@ -274,7 +328,7 @@ def file_title(name):
 # Files in the folder that aren't recipes (letters, articles, layout notes, the book's own
 # index). "code" holds what looks like a private passphrase and must never be published.
 EXCLUDE = {
-    'code', '_Blank', 'Format', 'Cover Page', 'CoverPage', 'AFOOFT Cover Page', 'AFOOFT Cover Page 3',
+    'code', '_Blank', 'AFOOFT', 'Format', 'Cover Page', 'CoverPage', 'AFOOFT Cover Page', 'AFOOFT Cover Page 3',
     'AFOOFT RECIPES Index', 'AFOOFT Recipes Edited and Printed (Autosaved)', 'AFOOFTDedication',
     'CFA - Incentives Are Dangerously Aligned in Private Markets', 'AI Paris Ideas', 'IKEA Scraps Book',
     'Christmas Alphabet Dictionary', 'Nurses', 'Fresh Market Ketchup Note', 'Oregon 2025', 'Kent State 2024',
@@ -335,7 +389,8 @@ def main():
         ip = resolve(m.get('image'))
         r['_img'] = str(ip.relative_to(SRC)) if ip else None
         r['_sh'] = shingles(text)
-        r['_tk'] = title_key(name) or title_key(r['title'])
+        r['_w'] = set(re.findall(r'[a-z]{3,}', text.lower()))
+        r['_tk'] = title_key(r['title']) or title_key(name)
         items.append(r)
 
     # Find duplicate groups: union-find over pairs that share most of their text,
@@ -373,6 +428,14 @@ def main():
         same_title = items[a]['_tk'] == items[b]['_tk']
         if (c >= 0.8 and ratio >= 0.6) or (c >= 0.9 and ratio >= 0.4) or (same_title and c >= 0.4 and ratio >= 0.35):
             pairs.append((a, b, c))
+    # Same title saved in two formats (an old slide and a PDF) can share few exact phrases
+    # once line wrapping differs, so compare plain word sets for those.
+    for ids in by_title.values():
+        for x in range(len(ids)):
+            for y in range(x + 1, len(ids)):
+                wa, wb = items[ids[x]]['_w'], items[ids[y]]['_w']
+                if wa and wb and len(wa & wb) / min(len(wa), len(wb)) >= 0.6:
+                    pairs.append((ids[x], ids[y], 0))
     for a, b, c in pairs:
         ra, rb = find(a), find(b)
         if ra != rb:
@@ -413,8 +476,8 @@ def main():
             rid, n = f'{base}-{n}', n + 1
         used.add(rid)
         r['id'] = rid
-        r['categories'] = categorize(r['title'] + ' ' + os.path.basename(r['file']), r['folder'])
-        if r['categories'] == ['Other']:
+        r['categories'] = categorize(r['title'] + '  ' + os.path.basename(r['file']), r['folder'])
+        if r['categories'] == ['Other'] and r['title'] not in CATEGORY_OVERRIDES:
             ing = ' '.join(x for x in r['ingredients'] if isinstance(x, str)).lower()
             guess = [name for name, pat in CATS if name in MAIN and re.search(pat, ing, re.I)]
             if len(guess) == 1:

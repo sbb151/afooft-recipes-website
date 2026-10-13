@@ -121,13 +121,31 @@
     const w = best[0] === 1 ? whole + 1 : whole;
     return (w ? w : '') + (best[1] ? best[1] : '') || '0';
   }
+  // Amounts later in a line ("4 cups/480 grams flour", "plus 2 tablespoons") scale too,
+  // but only when a unit follows, so can sizes like "(29-ounce)" stay put.
+  const NUM = String.raw`\d+\s+\d+\/\d+|\d+\s*[½⅓⅔¼¾⅛⅜⅝⅞⅕⅙]|\d+\/\d+|\d*\.\d+|\d+|[½⅓⅔¼¾⅛⅜⅝⅞⅕⅙]`;
+  const UNITS = 'cups?|c\\.?|tablespoons?|tbsps?\\.?|tbs\\.?|teaspoons?|tsps?\\.?|ounces?|oz\\.?|pounds?|lbs?\\.?|grams?|g|kg|kilograms?|ml|milliliters?|l|liters?|litres?|quarts?|qts?|pints?|sticks?|cloves?|slices?|pieces?|eggs?|large|medium|small';
+  const innerRe = new RegExp(String.raw`(^|[\s/(])(${NUM})(?=\s*(?:${UNITS})\b)`, 'gi');
   function scaleLine(line, f) {
     if (f === 1) return esc(line);
     const m = line.match(qtyRe);
-    if (!m) return esc(line);
-    const a = fmtQty(parseQty(m[1]) * f);
-    const b = m[3] ? fmtQty(parseQty(m[3]) * f) : null;
-    return `<b>${a}${b ? '–' + b : ''}</b>` + esc(line.slice(m[0].length));
+    let head = '', rest = line;
+    if (m) {
+      const a = fmtQty(parseQty(m[1]) * f);
+      const b = m[3] ? fmtQty(parseQty(m[3]) * f) : null;
+      head = `<b>${a}${b ? '–' + b : ''}</b>`;
+      rest = line.slice(m[0].length);
+    }
+    const parts = [];
+    let last = 0;
+    rest.replace(innerRe, (all, pre, num, idx) => {
+      const at = idx + pre.length;
+      parts.push(esc(rest.slice(last, at)), `<b>${fmtQty(parseQty(num) * f)}</b>`);
+      last = at + num.length;
+      return all;
+    });
+    parts.push(esc(rest.slice(last)));
+    return head + parts.join('');
   }
 
   // ---------- render: detail ----------

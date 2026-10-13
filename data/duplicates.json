@@ -19,6 +19,13 @@
    ]
   },
   {
+   "kept": "ChickenSaltimbocca.ppt",
+   "excluded": [
+    "Chicken Saltimbocca.ppt",
+    "BDGChicken Saltimbocca.doc"
+   ]
+  },
+  {
    "kept": "Sweet & Spicy Sheet-Pan Bacon Candy.docx",
    "excluded": [
     "Bacon Candy.docx"
@@ -61,9 +68,9 @@
    ]
   },
   {
-   "kept": "Beef Wellington for Four – Christmas 2020.docx",
+   "kept": "Updated Beef Wellington for Four.docx",
    "excluded": [
-    "Updated Beef Wellington for Four.docx"
+    "Beef Wellington for Four – Christmas 2020.docx"
    ]
   },
   {
@@ -100,6 +107,12 @@
    "kept": "Breakfast Casserole With Buttery Croissants.docx",
    "excluded": [
     "Buttery Breasfast Casserole With Croissants.docx"
+   ]
+  },
+  {
+   "kept": "BrieSouffle.ppt",
+   "excluded": [
+    "Brie Souffle.pdf"
    ]
   },
   {
@@ -238,12 +251,6 @@
    ]
   },
   {
-   "kept": "ChickenSaltimbocca.ppt",
-   "excluded": [
-    "Chicken Saltimbocca.ppt"
-   ]
-  },
-  {
    "kept": "Chicken Thighs Grilled With Garlic Yogurt and Cilantro.docx",
    "excluded": [
     "Chicken Thighs With Za’atar & Garlic Yogurt.docx"
@@ -304,8 +311,9 @@
    ]
   },
   {
-   "kept": "Coq Au Vin - Modern Version.docx",
+   "kept": "CoqAuVin.ppt",
    "excluded": [
+    "Coq Au Vin - Modern Version.docx",
     "Coq Au Vin.docx",
     "Coq Au Vin.doc"
    ]
@@ -389,11 +397,11 @@
    ]
   },
   {
-   "kept": "Frozen Margarita Made With Limeade.docx",
+   "kept": "Margarita Made With Limeade.docx",
    "excluded": [
-    "Margarita Made With Limeade.docx",
-    "Frozen Margarita Made With Limeade.pdf",
-    "Margarita Made With Limeade.pdf"
+    "Margarita Made With Limeade.pdf",
+    "Frozen Margarita Made With Limeade.docx",
+    "Frozen Margarita Made With Limeade.pdf"
    ]
   },
   {
@@ -515,6 +523,12 @@
    ]
   },
   {
+   "kept": "Oatmeal Raisin Cookies (WSJ).docx",
+   "excluded": [
+    "Oatmeal Raisin Cookies From the WSJ.docx"
+   ]
+  },
+  {
    "kept": "Pasta With Zucchini-Caprese Pesto .docx",
    "excluded": [
     "Orzo With Zucchini & Pesto – Caprese Style.docx",
@@ -608,7 +622,8 @@
   {
    "kept": "RoastedTomatoSoup.pdf",
    "excluded": [
-    "RoastedTomatoSoup.ppt"
+    "RoastedTomatoSoup.ppt",
+    "Roasted Tomato Soup.pdf"
    ]
   },
   {
@@ -822,6 +837,10 @@
   },
   {
    "file": "AFOOFT Recipes Edited and Printed (Autosaved).doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFT.ppt",
    "reason": "not a recipe"
   },
   {
