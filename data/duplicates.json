@@ -1,0 +1,1044 @@
+{
+ "duplicates": [
+  {
+   "kept": "1905 Salad.pdf",
+   "excluded": [
+    "1905 Salad.ppt"
+   ]
+  },
+  {
+   "kept": "Asian Cucumber, Celery, and Avocado Salad.docx",
+   "excluded": [
+    "Asian Cucumber, Celery, and Avocado Salad.pdf"
+   ]
+  },
+  {
+   "kept": "Avgolemono.docx",
+   "excluded": [
+    "Avgolemono.pdf"
+   ]
+  },
+  {
+   "kept": "Sweet & Spicy Sheet-Pan Bacon Candy.docx",
+   "excluded": [
+    "Bacon Candy.docx"
+   ]
+  },
+  {
+   "kept": "Baked Apricot French Toast.docx",
+   "excluded": [
+    "Baked Apricot French Toast.pdf"
+   ]
+  },
+  {
+   "kept": "Baked Beans – Best Ever.docx",
+   "excluded": [
+    "Baked Beans – Best Ever.pdf"
+   ]
+  },
+  {
+   "kept": "Pasta Baked With Tomatoes & Feta – Breaking the Internet.docx",
+   "excluded": [
+    "Baked Feta Pasta.docx"
+   ]
+  },
+  {
+   "kept": "The Union Square Cafe Bar Nuts.doc",
+   "excluded": [
+    "Bar Nuts.doc"
+   ]
+  },
+  {
+   "kept": "Modern Beef Burgundy.docx",
+   "excluded": [
+    "Beef Burgundy - A Modern Approach.docx"
+   ]
+  },
+  {
+   "kept": "Reverse Sear - Beef Terderloin.docx",
+   "excluded": [
+    "Beef Tenderloin (Reverse Sear Method).pdf"
+   ]
+  },
+  {
+   "kept": "Beef Wellington for Four – Christmas 2020.docx",
+   "excluded": [
+    "Updated Beef Wellington for Four.docx"
+   ]
+  },
+  {
+   "kept": "Beef Wellington.pptx",
+   "excluded": [
+    "Beef Wellington.ppt"
+   ]
+  },
+  {
+   "kept": "Beets -- An Easy Pickled Approach.docx",
+   "excluded": [
+    "Beets -- An Easy Pickled Approach.pdf"
+   ]
+  },
+  {
+   "kept": "Bolognese.pptx",
+   "excluded": [
+    "Bolognese.ppt"
+   ]
+  },
+  {
+   "kept": "Bouillabaisse.pptx",
+   "excluded": [
+    "Bouillabaisse.ppt"
+   ]
+  },
+  {
+   "kept": "Breakfast Casserole With Bacon and Cheese.docx",
+   "excluded": [
+    "Breakfast Casserole With Bacon and Cheese.pdf"
+   ]
+  },
+  {
+   "kept": "Breakfast Casserole With Buttery Croissants.docx",
+   "excluded": [
+    "Buttery Breasfast Casserole With Croissants.docx"
+   ]
+  },
+  {
+   "kept": "Broccoli Pasta – Roasted and Spicy.docx",
+   "excluded": [
+    "Broccoli Pasta – Roasted and Spicy.pdf"
+   ]
+  },
+  {
+   "kept": "Broccoli Salad With Garlic and Sesame.docx",
+   "excluded": [
+    "Broccoli Salad - Marinated.docx"
+   ]
+  },
+  {
+   "kept": "Brussels Sprouts With Bacon and Figs.docx",
+   "excluded": [
+    "Brussel Sprouts With Bacon and Figs.docx",
+    "Burssel Sprouts With Bacon and Figs.docx"
+   ]
+  },
+  {
+   "kept": "Brussels Sprouts With Pickled Shallots and Labneh.docx",
+   "excluded": [
+    "Brussels Sprouts With Pickled Shallots and Labneh.pdf"
+   ]
+  },
+  {
+   "kept": "Cabbage Strudel.docx",
+   "excluded": [
+    "Cabbage Strudel.pdf"
+   ]
+  },
+  {
+   "kept": "Cabbage – Addictive (Yamitsuki).docx",
+   "excluded": [
+    "Cabbage That’s Addictive (Yamitsuki).docx"
+   ]
+  },
+  {
+   "kept": "Carbonara Alla Orzotto.docx",
+   "excluded": [
+    "Orzo Alla Carbonara.docx"
+   ]
+  },
+  {
+   "kept": "Carrot Raisin Salad.docx",
+   "excluded": [
+    "Carrot Raisin Salad.doc"
+   ]
+  },
+  {
+   "kept": "Cassoulet D'Artagnan.docx",
+   "excluded": [
+    "Cassoulet D'Artagnan.pdf"
+   ]
+  },
+  {
+   "kept": "Cassoulet Improv.docx",
+   "excluded": [
+    "Cassoulet Improv.pdf"
+   ]
+  },
+  {
+   "kept": "Mashed Potatoes – Aligot, The Cheesiest.docx",
+   "excluded": [
+    "Mashed Potatoes - Frenched With Garlic & Cheese.docx",
+    "French Mashed Potatoes with Cheese and Garlic.docx",
+    "Cheesiest Mashed Potatoes.docx"
+   ]
+  },
+  {
+   "kept": "Chicken Breasts With Cilantro and Mint.docx",
+   "excluded": [
+    "Chicken Breasts Flavored With Garlic-Ginger Plus Cilantro and Mint.docx"
+   ]
+  },
+  {
+   "kept": "Chicken Karaage (Japanese).docx",
+   "excluded": [
+    "Chicken Karaage (Japanese).pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Marbella – An Easier Weeknight Version.docx",
+   "excluded": [
+    "Chicken Marbella – An Easier Weeknight Version.pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Marbella – From Ina Garten.docx",
+   "excluded": [
+    "Chicken Marbella – From Ina Garten.pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Orzo Bake With Creamy Boursin.docx",
+   "excluded": [
+    "Chicken Orzo Bake With Creamy Boursin.pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Parmesan (Quick).docx",
+   "excluded": [
+    "Chicken Parmesan (Quick).pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Parmesan a la Foyot.docx",
+   "excluded": [
+    "Chicken Parmesan a la Foyot.pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Parmesan for a Crowd.docx",
+   "excluded": [
+    "Chicken Parmesan for a Crowd.pdf"
+   ]
+  },
+  {
+   "kept": "ChickenParmesan.ppt",
+   "excluded": [
+    "Chicken Parmesan.ppt"
+   ]
+  },
+  {
+   "kept": "Chicken Roasted With a Sweet & Spicy Sauce.docx",
+   "excluded": [
+    "Sweet & Spicy Roast Chicken.docx"
+   ]
+  },
+  {
+   "kept": "Chicken Roasted – The Best – Every Single Time.docx",
+   "excluded": [
+    "Chicken – The Essential Simple Roast.docx"
+   ]
+  },
+  {
+   "kept": "ChickenSaltimbocca.ppt",
+   "excluded": [
+    "Chicken Saltimbocca.ppt"
+   ]
+  },
+  {
+   "kept": "Chicken Thighs Grilled With Garlic Yogurt and Cilantro.docx",
+   "excluded": [
+    "Chicken Thighs With Za’atar & Garlic Yogurt.docx"
+   ]
+  },
+  {
+   "kept": "Chicken Thighs With Butternut Squash and Gochujang.docx",
+   "excluded": [
+    "Chicken Thighs With Butternut Squash and Gochujang.pdf"
+   ]
+  },
+  {
+   "kept": "Chicken Thighs With Lemony Potatoes and Oregano.docx",
+   "excluded": [
+    "Chicken Thighs – With Potatoes, Oregano & Lemons.docx"
+   ]
+  },
+  {
+   "kept": "Chicken Thighs With Tomatoes, Scallions and Dijon Sauce.docx",
+   "excluded": [
+    "Chicken With Tomatoes and Scallions in a Dijon Sauce.docx"
+   ]
+  },
+  {
+   "kept": "Chicken in a Sheet Pan With Sweet Potatoes and Peppers.docx",
+   "excluded": [
+    "Chicken With Sweet Potatoes and Peppers.docx"
+   ]
+  },
+  {
+   "kept": "Chicken – Spatchcocked, Broiled, With Gravy.docx",
+   "excluded": [
+    "Chicken – Spatchcocked, Broiled, With Gravy.pdf"
+   ]
+  },
+  {
+   "kept": "Christmas 2022 (no border).docx",
+   "excluded": [
+    "Christmas 2022.docx"
+   ]
+  },
+  {
+   "kept": "Christmas Dinner 2018.pptx",
+   "excluded": [
+    "Christmas Dinner 2018.pdf"
+   ]
+  },
+  {
+   "kept": "Christmas Salad.docx",
+   "excluded": [
+    "Christmas Salad.pdf"
+   ]
+  },
+  {
+   "kept": "Cook’s Illustrated’s Recipe of the Year 1993–2015.pdf",
+   "excluded": [
+    "Cook's Illustrated 1993-2015.pdf"
+   ]
+  },
+  {
+   "kept": "Coq Au Vin - Modern Version.docx",
+   "excluded": [
+    "Coq Au Vin.docx",
+    "Coq Au Vin.doc"
+   ]
+  },
+  {
+   "kept": "Corn Dip – From Iowa Via Mexico.docx",
+   "excluded": [
+    "Corn Dip – From Iowa Via Mexico.pdf"
+   ]
+  },
+  {
+   "kept": "Cornish Hen.pptx",
+   "excluded": [
+    "CornishHen.ppt"
+   ]
+  },
+  {
+   "kept": "Cranberry Relish.docx",
+   "excluded": [
+    "Cranberry Relish.pdf"
+   ]
+  },
+  {
+   "kept": "Cranberry Sauce With Vanilla, Maple & Grand Marnier.docx",
+   "excluded": [
+    "Cranberry Sauce With Vanilla, Maple & Grand Marnier.pdf"
+   ]
+  },
+  {
+   "kept": "Creamy Mashed Parsnips.docx",
+   "excluded": [
+    "Creamy Mashed Parsnips.pdf"
+   ]
+  },
+  {
+   "kept": "Crispy Baked Tomato-Oregano Chicken.docx",
+   "excluded": [
+    "Crispy Baked Tomato-Oregano Chicken.pdf"
+   ]
+  },
+  {
+   "kept": "DeconstructedPestoPasta.pptx",
+   "excluded": [
+    "DeconstructedPestoPasta.ppt"
+   ]
+  },
+  {
+   "kept": "Deviled Eggs - 3 Ways.docx",
+   "excluded": [
+    "Deviled Eggs - 3 Ways.pdf"
+   ]
+  },
+  {
+   "kept": "Eggplant Parmesan on a Sheet-Pan.docx",
+   "excluded": [
+    "Eggplant Parmesan in a Sheet Pan.docx"
+   ]
+  },
+  {
+   "kept": "Eggplant Yogurt With Dates & Almonds.docx",
+   "excluded": [
+    "Eggplant With Date Almond Chutney.docx"
+   ]
+  },
+  {
+   "kept": "Spring Rolls (Filipino- Lumpia Shanghai).docx",
+   "excluded": [
+    "Filipino Spring Rolls (Lumpia Shanghai).pdf"
+   ]
+  },
+  {
+   "kept": "Fish Roasted With Lemony Almondine.docx",
+   "excluded": [
+    "Roasted White Fish With Lemony Almondine.docx"
+   ]
+  },
+  {
+   "kept": "Fried Chicken Made Ahead.docx",
+   "excluded": [
+    "Fried Chicken Made Ahead.pdf"
+   ]
+  },
+  {
+   "kept": "Frozen Margarita Made With Limeade.docx",
+   "excluded": [
+    "Margarita Made With Limeade.docx",
+    "Frozen Margarita Made With Limeade.pdf",
+    "Margarita Made With Limeade.pdf"
+   ]
+  },
+  {
+   "kept": "Pizza in a Pan – Detroit Style.docx",
+   "excluded": [
+    "Graces/Pizza in a Pan – Detroit Style.docx"
+   ]
+  },
+  {
+   "kept": "Mexican Quiche.pdf",
+   "excluded": [
+    "Mexican Quiche.ppt",
+    "Grandma's Mexican Casserole.ppt"
+   ]
+  },
+  {
+   "kept": "Greek Salad.pptx",
+   "excluded": [
+    "Greek Salad.ppt",
+    "GreekSalad.ppt"
+   ]
+  },
+  {
+   "kept": "Green Bean Casserole With Mushrooms (or Not).docx",
+   "excluded": [
+    "Green Bean Casserole With Mushrooms (or Not).pdf"
+   ]
+  },
+  {
+   "kept": "GrilledLegOfLamb.ppt",
+   "excluded": [
+    "Leg Of Lamb Robert.ppt"
+   ]
+  },
+  {
+   "kept": "Key Lime Pie Tarts.docx",
+   "excluded": [
+    "Key Lime Pie Tarts.pdf"
+   ]
+  },
+  {
+   "kept": "Lamb Kebab With Halloumi.docx",
+   "excluded": [
+    "Lamb, Tomato, and Halloumi Skewers with Orzo Salad.docx"
+   ]
+  },
+  {
+   "kept": "Lasagna Bolognese.doc",
+   "excluded": [
+    "Lasagna Bolognese.pdf",
+    "Lasagna Bolognese.ppt"
+   ]
+  },
+  {
+   "kept": "Lobster Rolls.docx",
+   "excluded": [
+    "Lobster Rolls.pdf"
+   ]
+  },
+  {
+   "kept": "Pasta Salad With Lemon and Herbs.docx",
+   "excluded": [
+    "Macaroni Salad – Fresh With Lemon and Herbs.docx",
+    "Macaroni Salad With Lemon and Herbs.docx"
+   ]
+  },
+  {
+   "kept": "Macaroni Salad – A Better Version.docx",
+   "excluded": [
+    "Macaroni Salad – A Better Version.pdf"
+   ]
+  },
+  {
+   "kept": "Tomato Marinara Sauce – Classic, Simple, & Quick.docx",
+   "excluded": [
+    "Marinara Sauce.docx"
+   ]
+  },
+  {
+   "kept": "Mississippi Roast.docx",
+   "excluded": [
+    "Mississippi Roast.pdf"
+   ]
+  },
+  {
+   "kept": "NoKneadBreadAlmost.doc",
+   "excluded": [
+    "No Knead Bread Almost.doc"
+   ]
+  },
+  {
+   "kept": "No-Knead Bread - Classic Version.pptx",
+   "excluded": [
+    "No Knead Bread.pdf",
+    "No-Knead Bread - Classic Version.pdf",
+    "NoKneadBread.ppt",
+    "No Knead Bread.ppt"
+   ]
+  },
+  {
+   "kept": "NoKneadDinnerRolls.doc",
+   "excluded": [
+    "No Knead DinnerRolls.doc"
+   ]
+  },
+  {
+   "kept": "No-Knead Bread – A Faster Version.docx",
+   "excluded": [
+    "No-Knead Bread – A Faster Version.pdf"
+   ]
+  },
+  {
+   "kept": "No-Knead Bread – Sourdough .docx",
+   "excluded": [
+    "Sourdough – No-Knead Bread (Cheater’s Version).docx",
+    "Sourdough No-Knead Bread.docx",
+    "No-Knead Bread – Sourdough .pdf",
+    "Sourdough – No-Knead Bread (Cheater’s Version).pdf"
+   ]
+  },
+  {
+   "kept": "Pasta With Zucchini-Caprese Pesto .docx",
+   "excluded": [
+    "Orzo With Zucchini & Pesto – Caprese Style.docx",
+    "Zucchini-Pesto Orzo .docx"
+   ]
+  },
+  {
+   "kept": "Paella.pdf",
+   "excluded": [
+    "Paella.ppt"
+   ]
+  },
+  {
+   "kept": "PanGrilledPorkChops.doc",
+   "excluded": [
+    "PanGrilledPorkChops.ppt"
+   ]
+  },
+  {
+   "kept": "Pasta Salad With Mozzarella, Avocado and Basil.docx",
+   "excluded": [
+    "Pasta Salad With Mozzarella, Avocado and Basil.pdf"
+   ]
+  },
+  {
+   "kept": "Pasta Without Boiling it First.docx",
+   "excluded": [
+    "Pasta – Baked Without Boiling.docx"
+   ]
+  },
+  {
+   "kept": "Quick Pizza Dough.docx",
+   "excluded": [
+    "Pizza Dough – A Quick Version.docx"
+   ]
+  },
+  {
+   "kept": "Poached Fish Fillets in Oil.docx",
+   "excluded": [
+    "Poached Fish Fillets with Sherry.docx"
+   ]
+  },
+  {
+   "kept": "Spaghetti With Sausage Meatballs.docx",
+   "excluded": [
+    "Pork & Sausage Meatballs.docx"
+   ]
+  },
+  {
+   "kept": "Sautéed Pork Cutlets with Lemon.doc",
+   "excluded": [
+    "Pork Cutlets With Lemon Caper Sauce.doc"
+   ]
+  },
+  {
+   "kept": "Prime Rib With Bones – Definitive Reverse Seared.docx",
+   "excluded": [
+    "Prime Rib With Bones – Reversed Seared.docx"
+   ]
+  },
+  {
+   "kept": "Race Day Soiree - General Potter Farm.docx",
+   "excluded": [
+    "Race Day Soiree - General Potter Farm.pdf"
+   ]
+  },
+  {
+   "kept": "Raspberry-Lemon Cheesecake Bars.docx",
+   "excluded": [
+    "Raspberry-Lemon Cheesecake Bars.pdf"
+   ]
+  },
+  {
+   "kept": "Reverse Sear Individual Filet Mignon.docx",
+   "excluded": [
+    "Reverse Sear Individual Filet Mignon.pdf"
+   ]
+  },
+  {
+   "kept": "Rice Krispies Treats.ppt",
+   "excluded": [
+    "Rice Krispie Treats.ppt"
+   ]
+  },
+  {
+   "kept": "Roast Turkey Breast - Porchetta Style.docx",
+   "excluded": [
+    "Roast Turkey Breast - Porchetta Style.pdf"
+   ]
+  },
+  {
+   "kept": "RoastedTomatoSoup.pdf",
+   "excluded": [
+    "RoastedTomatoSoup.ppt"
+   ]
+  },
+  {
+   "kept": "Ruffled Milk Pie.docx",
+   "excluded": [
+    "Ruffled Milk Pie.txt"
+   ]
+  },
+  {
+   "kept": "Smoked Salmon Strata With Rye and Crème Fraîche.docx",
+   "excluded": [
+    "Rye and Crème Fraîche Strata with Smoked Salmon.docx"
+   ]
+  },
+  {
+   "kept": "SaladeNicoise.pptx",
+   "excluded": [
+    "SaladeNicoise.ppt"
+   ]
+  },
+  {
+   "kept": "Smoked Salmon Crisps.docx",
+   "excluded": [
+    "Salmon Appetizer.docx"
+   ]
+  },
+  {
+   "kept": "Salmon Caesar Salad.docx",
+   "excluded": [
+    "Salmon Caesar Salad With a Parmesan-Crust.docx"
+   ]
+  },
+  {
+   "kept": "Salmon En Papillote With Green Beans and Corn.docx",
+   "excluded": [
+    "Salmon in a Packet With Green Beans and Corn.docx"
+   ]
+  },
+  {
+   "kept": "Salmon Grilled Yakitori-Style With Zucchini.docx",
+   "excluded": [
+    "Salmon – Yakitori-Style With Scallions and Zucchini.docx"
+   ]
+  },
+  {
+   "kept": "Salmon That’s Pan-Seared.docx",
+   "excluded": [
+    "Salmon That’s Pan-Seared.pdf"
+   ]
+  },
+  {
+   "kept": "Scallion Pancakes.docx",
+   "excluded": [
+    "Scallion Pancakes.pdf"
+   ]
+  },
+  {
+   "kept": "Shrimp Salad.docx",
+   "excluded": [
+    "Shrimp Salad.pdf"
+   ]
+  },
+  {
+   "kept": "Skillet-Roasted Cauliflower With Panko.docx",
+   "excluded": [
+    "Skillet-Roasted Cauliflower With Panko (Blake Gall's conflicted copy 2015-12-17).docx"
+   ]
+  },
+  {
+   "kept": "Smoked Fish and Potato Soup With Chorizo.docx",
+   "excluded": [
+    "Smoked Fish and Potato Soup With Chorizo.pdf"
+   ]
+  },
+  {
+   "kept": "Sourdough No-Knead Bread OLD.docx",
+   "excluded": [
+    "Sourdough.docx"
+   ]
+  },
+  {
+   "kept": "Steak and Rice Noodle Salad.docx",
+   "excluded": [
+    "Steak and Rice Noodle Salad.pdf"
+   ]
+  },
+  {
+   "kept": "Steakhouse Kebabs.docx",
+   "excluded": [
+    "Steakhouse Kebabs.txt"
+   ]
+  },
+  {
+   "kept": "Summer Fruit Salad.docx",
+   "excluded": [
+    "Summer Fruit Salad.pdf"
+   ]
+  },
+  {
+   "kept": "Thanksgiving 2020.docx",
+   "excluded": [
+    "Thanksgiving 2020.pdf"
+   ]
+  },
+  {
+   "kept": "Thanksgiving 2021.docx",
+   "excluded": [
+    "Thanksgiving 2021.pdf"
+   ]
+  },
+  {
+   "kept": "Thanksgiving 2023.docx",
+   "excluded": [
+    "Thanksgiving 2023.pdf"
+   ]
+  },
+  {
+   "kept": "Thanksgiving Ombré Gratin.docx",
+   "excluded": [
+    "Thanksgiving Ombré Gratin.pdf"
+   ]
+  },
+  {
+   "kept": "The Best Vegetarian Stuffing Ever.docx",
+   "excluded": [
+    "The Best Vegetarian Stuffing Ever.pdf",
+    "The Best Vegetarian Stuffing.docx"
+   ]
+  },
+  {
+   "kept": "Thousand Island Dressing - Homemade.docx",
+   "excluded": [
+    "Thousand Island Dressing - Homemade.pdf"
+   ]
+  },
+  {
+   "kept": "Tomahawk Ribeye Steak vs Lamb Lollipops.docx",
+   "excluded": [
+    "Tomahawk Ribeye Steak vs Lamb Lollipops.pdf"
+   ]
+  },
+  {
+   "kept": "Tomato Sauce (Easy).docx",
+   "excluded": [
+    "Tomato Sauce (Easy).pdf"
+   ]
+  },
+  {
+   "kept": "Tomato Sauce Inspired By Marcella Hazan.docx",
+   "excluded": [
+    "Tomato Sauce Inspired By Marcella Hazan.pdf"
+   ]
+  },
+  {
+   "kept": "Turkey Breast.pptx",
+   "excluded": [
+    "TurkeyBreast.pptx",
+    "TurkeyBreast.ppt"
+   ]
+  },
+  {
+   "kept": "Turkey Roulades.docx",
+   "excluded": [
+    "Turkey Roulades.pdf"
+   ]
+  },
+  {
+   "kept": "Veal Chops Parmesan.pptx",
+   "excluded": [
+    "VealChopsParmesan (Blake Gall's conflicted copy).ppt",
+    "VealChopsParmesan.ppt"
+   ]
+  },
+  {
+   "kept": "Veal Morels.pptx",
+   "excluded": [
+    "VealMorels.ppt"
+   ]
+  },
+  {
+   "kept": "Veal Orloff.pptx",
+   "excluded": [
+    "VealOrloff.ppt"
+   ]
+  },
+  {
+   "kept": "Zucchini Fritters.docx",
+   "excluded": [
+    "Zucchini Fritters.doc"
+   ]
+  },
+  {
+   "kept": "Zucchini Tots.docx",
+   "excluded": [
+    "Zucchini Tots.pdf"
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "file": "AFOOFT Cover Page 3.doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFT Cover Page.doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFT RECIPES Index.doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFT Recipes Edited and Printed (Autosaved).doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFTDedication.doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "AI Paris Ideas.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Apple Dutch Baby.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Apple Pie Hot Dog.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Beets With Rosemary.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Bob's Shrimp Cocktail Sauce.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Butterscotch Sauce.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "CFA - Incentives Are Dangerously Aligned in Private Markets.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "CFA - Incentives Are Dangerously Aligned in Private Markets.pdf",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Celery Ceasar Salad.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Chile Con Queso For a Crowd.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Christmas 2023.pdf",
+   "reason": "text unreadable (scan with poor OCR)"
+  },
+  {
+   "file": "Christmas Alphabet Dictionary.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Christmas Dinner 2015.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Christmas Dinner 2015.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Cook's Illustrated Annual 2021.pdf",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Cook's Illustrated Annual 2022.pdf",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "CoverPage Mosaic/Oregon 2025.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "CoverPage.ppt",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Dartagnan-cooking-guide-turkey.pdf",
+   "reason": "text unreadable (scan with poor OCR)"
+  },
+  {
+   "file": "Eggplant Stuffed With Meatball Mixture.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Facebook Chicken Parm.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Facebook Chicken Parm.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Filipino Spring Rolls-01.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Format.ppt",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Fresh Market Ketchup Note.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Grilled Sides.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Haricots Verts.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Holiday Spirits.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "IKEA Scraps Book.pdf",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Kent State 2024.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Margo's Next Meal.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Miraculous Strawberry Dessert.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Mom&Dad.ppt",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "NYT - 12 Restaurant Triumphs of 2012.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "NYTThe best trattoria in Rome.doc",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Noodle Cutting Machine.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Nurses.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "Pig in Bacon.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Potato Galette.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Reuben Dip.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Salmon Dish.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Sausage Alfredo.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Silver Palate Galls.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Smashed Fingerlings With Jalepenos.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Soup du Siecle.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Southern Unfried Chicken.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Sunday Italian Gravy.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Sunshine Salmon.pdf",
+   "reason": "text unreadable (scan with poor OCR)"
+  },
+  {
+   "file": "Thanksgiving 2022.pdf",
+   "reason": "text unreadable (scan with poor OCR)"
+  },
+  {
+   "file": "Zucchini Side Dish.pdf",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "_Blank.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "code.docx",
+   "reason": "not a recipe"
+  },
+  {
+   "file": "truffes choco caramel.pdf",
+   "reason": "text unreadable (scan with poor OCR)"
+  }
+ ]
+}
