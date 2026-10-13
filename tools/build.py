@@ -7,7 +7,7 @@ SOURCE_DIR holds manifest.json, text/ and images/ as produced by the extraction
 run on the Mac. Writes SITE_DIR/data/index.json, SITE_DIR/data/r/<id>.json,
 SITE_DIR/img/<id>.jpg, SITE_DIR/img/t/<id>.jpg and SITE_DIR/data/duplicates.json.
 """
-import json, re, sys, os, shutil, unicodedata, hashlib
+import json, re, sys, os, shutil, subprocess, unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -357,9 +357,16 @@ def resolve(rel):
 
 def main():
     manifest = json.loads((SRC / 'manifest.json').read_text())
+    # Recipes deleted on the website stay deleted when the folder is re-read
+    edits_path = SITE / 'data' / 'edits.json'
+    edits = json.loads(edits_path.read_text()) if edits_path.exists() else {}
+    deleted = {unicodedata.normalize('NFC', f) for f in edits.get('deleted', [])}
     items = []
     skipped = []
     for m in manifest:
+        if unicodedata.normalize('NFC', m['path']) in deleted:
+            skipped.append({'file': m['path'], 'reason': 'deleted on the website'})
+            continue
         p = m['path']
         ext = p.rsplit('.', 1)[-1].lower() if '.' in p else ''
         name = os.path.basename(p).rsplit('.', 1)[0]
@@ -460,9 +467,9 @@ def main():
     data = SITE / 'data'
     rdir = data / 'r'
     img = SITE / 'img'
-    for d in (rdir, img / 't'):
-        shutil.rmtree(d, ignore_errors=True)
-        d.mkdir(parents=True, exist_ok=True)
+    shutil.rmtree(rdir, ignore_errors=True)
+    rdir.mkdir(parents=True, exist_ok=True)
+    (img / 't').mkdir(parents=True, exist_ok=True)
     used = set()
     index_out = []
     try:
@@ -490,22 +497,34 @@ def main():
         if r['_img'] and (SRC / r['_img']).exists():
             image, thumb = f'img/{rid}.jpg', f'img/t/{rid}.jpg'
             src = SRC / r['_img']
-            if Image:
+            fresh = (SITE / thumb).exists() and (SITE / thumb).stat().st_mtime >= src.stat().st_mtime \
+                and (SITE / image).exists()
+            if fresh:
+                pass
+            elif Image:
                 with Image.open(src) as im:
                     im = im.convert('RGB')
                     big = im.copy(); big.thumbnail((1000, 1000)); big.save(SITE / image, quality=72, optimize=True)
                     w, h = im.size; s = min(w, h)
                     sq = im.crop(((w - s) // 2, (h - s) // 2, (w - s) // 2 + s, (h - s) // 2 + s)).resize((128, 128))
                     sq.save(SITE / thumb, quality=70, optimize=True)
+            elif shutil.which('sips'):
+                # macOS without Pillow (the scheduled Dropbox check runs there)
+                subprocess.run(['sips', '-Z', '1000', '-s', 'format', 'jpeg', str(src), '--out', str(SITE / image)], capture_output=True)
+                subprocess.run(['sips', '-Z', '160', '-s', 'format', 'jpeg', str(src), '--out', str(SITE / thumb)], capture_output=True)
             else:
-                shutil.copy(src, SITE / image); thumb = image
+                shutil.copy(src, SITE / image); shutil.copy(src, SITE / thumb)
         out = {k: v for k, v in r.items() if not k.startswith('_') and v not in ('', [], None)}
         out['image'] = image
         (rdir / f'{rid}.json').write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')))
         ing_text = ' '.join(x for x in r['ingredients'] if isinstance(x, str))
         snippet = ', '.join(r['categories'][:2])
-        index_out.append({'id': rid, 't': r['title'], 'c': r['categories'], 'img': thumb, 's': snippet,
+        index_out.append({'id': rid, 'f': r['file'], 't': r['title'], 'c': r['categories'], 'img': thumb, 's': snippet,
                           'k': re.sub(r'\s+', ' ', ing_text.lower())[:600]})
+    for d, pat in ((img, '*.jpg'), (img / 't', '*.jpg')):
+        for f in d.glob(pat):
+            if f.stem not in used:
+                f.unlink()
     (data / 'index.json').write_text(json.dumps(index_out, ensure_ascii=False, separators=(',', ':')))
     (data / 'duplicates.json').write_text(json.dumps({'duplicates': dupes, 'skipped': skipped}, ensure_ascii=False, indent=1))
     structured = sum(1 for r in kept if r['ingredients'] and r['directions'])
