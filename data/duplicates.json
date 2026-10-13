@@ -287,18 +287,6 @@
    ]
   },
   {
-   "kept": "Christmas 2022 (no border).docx",
-   "excluded": [
-    "Christmas 2022.docx"
-   ]
-  },
-  {
-   "kept": "Christmas Dinner 2018.pptx",
-   "excluded": [
-    "Christmas Dinner 2018.pdf"
-   ]
-  },
-  {
    "kept": "Christmas Salad.docx",
    "excluded": [
     "Christmas Salad.pdf"
@@ -590,12 +578,6 @@
    ]
   },
   {
-   "kept": "Race Day Soiree - General Potter Farm.docx",
-   "excluded": [
-    "Race Day Soiree - General Potter Farm.pdf"
-   ]
-  },
-  {
    "kept": "Raspberry-Lemon Cheesecake Bars.docx",
    "excluded": [
     "Raspberry-Lemon Cheesecake Bars.pdf"
@@ -729,18 +711,6 @@
    ]
   },
   {
-   "kept": "Thanksgiving 2021.docx",
-   "excluded": [
-    "Thanksgiving 2021.pdf"
-   ]
-  },
-  {
-   "kept": "Thanksgiving 2023.docx",
-   "excluded": [
-    "Thanksgiving 2023.pdf"
-   ]
-  },
-  {
    "kept": "Thanksgiving Ombré Gratin.docx",
    "excluded": [
     "Thanksgiving Ombré Gratin.pdf"
@@ -757,12 +727,6 @@
    "kept": "Thousand Island Dressing - Homemade.docx",
    "excluded": [
     "Thousand Island Dressing - Homemade.pdf"
-   ]
-  },
-  {
-   "kept": "Tomahawk Ribeye Steak vs Lamb Lollipops.docx",
-   "excluded": [
-    "Tomahawk Ribeye Steak vs Lamb Lollipops.pdf"
    ]
   },
   {
@@ -824,12 +788,20 @@
  ],
  "skipped": [
   {
+   "file": "10 Unexpected Ways to Use Your Microwave.docx",
+   "reason": "not a recipe: microwave tips article"
+  },
+  {
    "file": "AFOOFT Cover Page 3.doc",
    "reason": "not a recipe"
   },
   {
    "file": "AFOOFT Cover Page.doc",
    "reason": "not a recipe"
+  },
+  {
+   "file": "AFOOFT Dedication.doc",
+   "reason": "not a recipe: the book’s dedication"
   },
   {
    "file": "AFOOFT RECIPES Index.doc",
@@ -868,6 +840,14 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "Braised Red Cabbage With Caraway and Apple.docx",
+   "reason": "not a recipe: empty file, title only"
+  },
+  {
+   "file": "Butter Boards.docx",
+   "reason": "not a recipe: trend article, no recipe"
+  },
+  {
    "file": "Butterscotch Sauce.docx",
    "reason": "no readable text (probably a scan)"
   },
@@ -888,8 +868,28 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "Christmas 2021.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Christmas 2022 (no border).docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Christmas 2023.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
    "file": "Christmas 2023.pdf",
-   "reason": "text unreadable (scan with poor OCR)"
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Christmas 2024.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Christmas 2025.docx",
+   "reason": "not a recipe: menu of dish names"
   },
   {
    "file": "Christmas Alphabet Dictionary.docx",
@@ -902,6 +902,14 @@
   {
    "file": "Christmas Dinner 2015.pptx",
    "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Christmas Dinner 2018.pdf",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Christmas Dinner 2018.pptx",
+   "reason": "not a recipe: menu of dish names"
   },
   {
    "file": "Cook's Illustrated Annual 2021.pdf",
@@ -924,6 +932,10 @@
    "reason": "text unreadable (scan with poor OCR)"
   },
   {
+   "file": "Dear Cook.doc",
+   "reason": "not a recipe: letter to Cook’s Illustrated"
+  },
+  {
    "file": "Eggplant Stuffed With Meatball Mixture.pdf",
    "reason": "no readable text (probably a scan)"
   },
@@ -936,6 +948,10 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "FancyExtraVirginOliveOils.pdf",
+   "reason": "not a recipe: olive oil tasting"
+  },
+  {
    "file": "Filipino Spring Rolls-01.pdf",
    "reason": "no readable text (probably a scan)"
   },
@@ -946,6 +962,14 @@
   {
    "file": "Fresh Market Ketchup Note.docx",
    "reason": "not a recipe"
+  },
+  {
+   "file": "Graces/Come.ppt",
+   "reason": "not a recipe: mealtime grace"
+  },
+  {
+   "file": "Graces/Graces.ppt",
+   "reason": "not a recipe: mealtime graces"
   },
   {
    "file": "Grilled Sides.pdf",
@@ -972,6 +996,10 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "Meat Cooking Temperatures.docx",
+   "reason": "not a recipe: temperature chart"
+  },
+  {
    "file": "Miraculous Strawberry Dessert.pdf",
    "reason": "no readable text (probably a scan)"
   },
@@ -996,12 +1024,24 @@
    "reason": "not a recipe"
   },
   {
+   "file": "PSU vs Nevada 2025.docx",
+   "reason": "not a recipe: tailgate theme ideas"
+  },
+  {
    "file": "Pig in Bacon.pdf",
    "reason": "no readable text (probably a scan)"
   },
   {
    "file": "Potato Galette.pdf",
    "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Race Day Soiree - General Potter Farm.docx",
+   "reason": "not a recipe: event directions"
+  },
+  {
+   "file": "Race Day Soiree - General Potter Farm.pdf",
+   "reason": "not a recipe: event directions"
   },
   {
    "file": "Reuben Dip.pptx",
@@ -1028,8 +1068,16 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "Sous Vide Basics.docx",
+   "reason": "not a recipe: two web links"
+  },
+  {
    "file": "Southern Unfried Chicken.pdf",
    "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Steak Cuts (Flat Steaks).docx",
+   "reason": "not a recipe: article on steak cuts"
   },
   {
    "file": "Sunday Italian Gravy.pdf",
@@ -1040,8 +1088,56 @@
    "reason": "text unreadable (scan with poor OCR)"
   },
   {
+   "file": "Tasting-BalsamicVinegar.pdf",
+   "reason": "not a recipe: balsamic vinegar tasting"
+  },
+  {
+   "file": "TastingOliveOilMA01.pdf",
+   "reason": "not a recipe: olive oil tasting"
+  },
+  {
+   "file": "Thanksgiving 2021.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2021.pdf",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2022.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
    "file": "Thanksgiving 2022.pdf",
-   "reason": "text unreadable (scan with poor OCR)"
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2023.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2023.pdf",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2024.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "Thanksgiving 2025.docx",
+   "reason": "not a recipe: menu of dish names"
+  },
+  {
+   "file": "The Best Pizza in America.docx",
+   "reason": "not a recipe: restaurant profile, no recipe"
+  },
+  {
+   "file": "Tomahawk Ribeye Steak vs Lamb Lollipops.docx",
+   "reason": "not a recipe: size notes"
+  },
+  {
+   "file": "Tomahawk Ribeye Steak vs Lamb Lollipops.pdf",
+   "reason": "not a recipe: size notes"
   },
   {
    "file": "Zucchini Side Dish.pdf",
@@ -1058,6 +1154,10 @@
   {
    "file": "truffes choco caramel.pdf",
    "reason": "text unreadable (scan with poor OCR)"
+  },
+  {
+   "file": "zz.ppt",
+   "reason": "not a recipe: layout scratch file"
   }
  ]
 }

@@ -15,4 +15,16 @@ keep the screen awake while you cook.
 3. The site itself is static: `index.html`, `app.js`, `style.css`, `sw.js`. GitHub Pages serves it
    from the `main` branch.
 
-To add new recipes: re-run the extraction for the new files, then re-run `tools/build.py` and commit.
+## Adding, editing and deleting on the site
+
+The ＋ button adds a recipe, and ✎ and 🗑 on a recipe edit or delete it. Saves go to `data/edits.json`
+(and photos to `img/u/`) through the GitHub API, using a fine-grained GitHub key entered once per device
+under "Editing settings". The key never leaves that device except to talk to GitHub. Deleting never touches
+Dropbox, and `build.py` keeps deleted files out of later rebuilds.
+
+## Daily Dropbox check
+
+`tools/mac/install.sh` (run once on the Mac that syncs Dropbox) sets up a launchd job that runs
+`tools/mac/afooft_sync.py` every day at 7:00: it reads new or changed files in `AFOOFT Recipes`,
+updates the source repo, rebuilds the site and pushes it. Log: `~/afooft-sync/sync.log`.
+`bash install.sh remove` turns it off.
