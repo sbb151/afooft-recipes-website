@@ -928,6 +928,10 @@
    "reason": "not a recipe"
   },
   {
+   "file": "Crusty Dinner Rolls.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
    "file": "Dartagnan-cooking-guide-turkey.pdf",
    "reason": "text unreadable (scan with poor OCR)"
   },
@@ -1008,6 +1012,10 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "NY Times - Worrisome Bubble in AI.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
    "file": "NYT - 12 Restaurant Triumphs of 2012.docx",
    "reason": "not a recipe"
   },
@@ -1045,6 +1053,10 @@
   },
   {
    "file": "Reuben Dip.pptx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Roasted Cod with Caramelized Endive and Riesling Sauce.docx",
    "reason": "no readable text (probably a scan)"
   },
   {
