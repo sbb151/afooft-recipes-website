@@ -1,8 +1,9 @@
 {
  "duplicates": [
   {
-   "kept": "1905 Salad.pdf",
+   "kept": "1905 Salad New.pptx",
    "excluded": [
+    "1905 Salad.pdf",
     "1905 Salad.ppt"
    ]
   },
@@ -804,10 +805,6 @@
    "reason": "not a recipe: microwave tips article"
   },
   {
-   "file": "1905 saladnew.pptx",
-   "reason": "File is not a zip file"
-  },
-  {
    "file": "AFOOFT Cover Page 3.doc",
    "reason": "not a recipe"
   },
@@ -1025,10 +1022,6 @@
   },
   {
    "file": "Mom&Dad.ppt",
-   "reason": "no readable text (probably a scan)"
-  },
-  {
-   "file": "NY Times - Worrisome Bubble in AI.docx",
    "reason": "no readable text (probably a scan)"
   },
   {
