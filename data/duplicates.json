@@ -1149,6 +1149,10 @@
    "reason": "not a recipe: menu of dish names"
   },
   {
+   "file": "Thanksgiving 2026 New.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
    "file": "The Best Pizza in America.docx",
    "reason": "not a recipe: restaurant profile, no recipe"
   },
