@@ -941,10 +941,6 @@
    "reason": "not a recipe"
   },
   {
-   "file": "Crusty Dinner Rolls.docx",
-   "reason": "no readable text (probably a scan)"
-  },
-  {
    "file": "Dartagnan-cooking-guide-turkey.pdf",
    "reason": "text unreadable (scan with poor OCR)"
   },
@@ -1149,7 +1145,7 @@
    "reason": "not a recipe: menu of dish names"
   },
   {
-   "file": "Thanksgiving 2026 New.docx",
+   "file": "Thanksgiving 2026.docx",
    "reason": "no readable text (probably a scan)"
   },
   {
@@ -1163,6 +1159,10 @@
   {
    "file": "Tomahawk Ribeye Steak vs Lamb Lollipops.pdf",
    "reason": "not a recipe: size notes"
+  },
+  {
+   "file": "Turkey – Roasted Upside Down.docx",
+   "reason": "no readable text (probably a scan)"
   },
   {
    "file": "Zucchini Side Dish.pdf",
