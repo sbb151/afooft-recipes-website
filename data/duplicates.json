@@ -861,6 +861,10 @@
    "reason": "not a recipe: trend article, no recipe"
   },
   {
+   "file": "Butternut Squash & Sweet Potato Soup.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
    "file": "Butterscotch Sauce.docx",
    "reason": "no readable text (probably a scan)"
   },
@@ -1093,6 +1097,10 @@
    "reason": "no readable text (probably a scan)"
   },
   {
+   "file": "Spiraled Sweet Potatoes With Special Sauce.docx",
+   "reason": "no readable text (probably a scan)"
+  },
+  {
    "file": "Steak Cuts (Flat Steaks).docx",
    "reason": "not a recipe: article on steak cuts"
   },
@@ -1147,6 +1155,10 @@
   {
    "file": "Thanksgiving 2026.docx",
    "reason": "no readable text (probably a scan)"
+  },
+  {
+   "file": "Thanksgiving 2026.pdf",
+   "reason": "pdftotext -layout /Users/sambonsall/Library/CloudStorage/Dropbox/AFOOFT Recipes/Thanksgiving 2026.pdf - failed: Syntax Warning: May not be a PDF file (continuing anyway)\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't find trailer dictionary\nSyntax Error: Couldn't read xref tab"
   },
   {
    "file": "The Best Pizza in America.docx",
